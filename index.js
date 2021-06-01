@@ -1,6 +1,5 @@
 // Your code here
-//const testArray = ["Jess", "Addo", "Software Engineer", 40]
-//const twoRows = [["Jess", "Addo", "Software Engineer", 40],["Der","Sewell", "Turtle", 80]]
+
 function createEmployeeRecord (testArray)
 {
     const employeeRecord =
@@ -40,15 +39,36 @@ function createEmployeeRecords(twoRows) {
 
 function createTimeInEvent(employeeRecord, dateStamp)
 {
+const hour = dateStamp.split(' ')[1]
+const date = dateStamp.split(' ')[0]
 
-        employeeRecord.timeInEvents[0] = "TimeIn"
-        //employeeRecord.timeInEvents.append(dateStamp)
-        //employeeRecord.timeInEvents.push(dateStamp.substring(11, 15))
-        // employeeRecord.timeInEvents.push(dateStamp.substring(0, 10))
+employeeRecord.timeInEvents.push({ 
+   type: "TimeIn",
+   hour: parseInt(hour, 10),
+   date: date
 
-        // employeeRecord.timeOutEvents.push("TimeOut")
-        // employeeRecord.timeOutEvents.push(dateStamp.substring(11, 15))
-        // employeeRecord.timeOutEvents.push(dateStamp.substring(0, 10))
+   
+})
+return employeeRecord   
+}
 
-        return employeeRecord;
+function createTimeOutEvent(employeeRecord, dateStamp)
+{
+const hour = dateStamp.split(' ')[1]
+const date = dateStamp.split(' ')[0]
+
+employeeRecord.timeOutEvents.push({ 
+   type: "TimeOut",
+   hour: parseInt(hour, 10),
+   date: date
+
+   
+})
+return employeeRecord   
+}
+
+function hoursWorkedOnDate(employeeRecord,soughtDate) {
+
+
+
 }
